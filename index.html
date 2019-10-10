@@ -10,7 +10,7 @@
             const filter = "0123456789+-/*()=".split('')
             let x = document.getElementById("result").value
             //evaluate filtered value
-            x = eval(x.split('').filter(c => filter.indexOf(c + '') > -1)
+            document.getElementById("result").value = eval(x.split('').filter(c => filter.indexOf(c + '') > -1).join(''))
          } 
            
          //function that clear the display 
