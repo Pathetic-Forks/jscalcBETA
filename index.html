@@ -3,54 +3,47 @@
    <head> 
       <script> 
          //function that display value 
-         function dis(val) 
-         { 
-             document.getElementById("result").value+=val 
-         } 
+         const dis = val => document.getElementById("result").value += val
            
          //function that evaluates the digit and return result 
-         function solve() 
-         { 
-             let x = document.getElementById("result").value 
-             let y = eval(x) 
-             document.getElementById("result").value = y 
+         const solve = () => {
+            const filter = "0123456789+-/*()=".split('')
+            let x = document.getElementById("result").value
+            //evaluate filtered value
+            x = eval(x.split('').filter(c => filter.indexOf(c + '') > -1)
          } 
            
          //function that clear the display 
-         function clr() 
-         { 
-             document.getElementById("result").value = "" 
-         } 
-      </script> 
+         const clr = () => document.getElementById("result").value = ""
+      </script>
+      
       <!-- for styling -->
       <style> 
-         .title{ 
-         margin-bottom: 10px; 
-         text-align:center; 
-         width: 210px; 
-         color:powderblue; 
-         border: solid black 1px; 
+         .title { 
+            margin-bottom: 10px; 
+            text-align: center; 
+            width: 210px; 
+            color: powderblue; 
+            border: solid black 1px; 
          } 
   
-         input[type="button"] 
-         { 
-         background-color:powderblue; 
-         color: black; 
-         border: solid black 1px; 
-         width:100% 
+         input[type="button"] { 
+            background-color: powderblue; 
+            color: black; 
+            border: solid black 1px; 
+            width: 100%;
          } 
   
-         input[type="text"] 
-         { 
-         background-color:white; 
-         border: solid black 2px; 
-         width:100% 
+         input[type="text"] { 
+            background-color: white; 
+            border: solid black 2px; 
+            width: 80%;
          } 
       </style> 
    </head> 
    <!-- create table -->
    <body> 
-      <div class = title >Trashy JS Calc</div> 
+      <div class="title">Trashy JS Calc</div> 
       <table border="1"> 
          <tr> 
             <td colspan="3"><input type="text" id="result"/></td> 
